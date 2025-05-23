@@ -1,0 +1,558 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+body{
+    background: #1f242d;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    z-index: 100;
+}
+
+nav a { font-size: 2rem;
+    margin-left: 3.5rem;
+    color: #fff;
+   font-weight: 500;
+
+}
+.logo{
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 700;
+}
+#menuicon{
+    font-size: 4rem;
+    display:none ;
+    color: #fff;
+    
+}
+
+nav a:hover,
+nav a.active {
+    color: rgb(48, 186, 186);
+}
+.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+}
+.homeinfo h1{
+    font-size: 45px;
+}
+.homeinfo h2{
+    font-size: 33px;
+    margin-top: -10px;
+}
+
+.homeinfo h2 span{
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .07rem #7cf03d;
+    animation: display-text 14s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+@keyframes display-text{
+    25%,100%{
+        display: none;
+    }
+}
+.homeinfo h2 span::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #7cf03d;
+    width: 0;
+    border-right: .2 rem solid #7cf03d;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill 3s linear infinite;
+
+}
+@keyframes fill{
+    10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+
+}
+.homeinfo p{
+    font-size: 16px;
+    margin:10px 0 25px ;
+}
+.homeinfo .btn{
+    display: flex;
+    align-items: center;
+}
+.btns{
+    display: inline-block;
+    padding: 10px 30px;
+    background: greenyellow;
+    border: 2px solid #7cf03d;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #7cf03d;
+    font-size: 1rem 3rem;
+    color: #1f242d;
+    font-weight: 600;
+    transition: .5s;
+}
+.btns:hover {
+    background: transparent;
+    color: #7cf03d;
+    box-shadow: none;
+}
+.homeinfo .btn .sci{
+    margin-left: 20px;
+}
+.homeinfo .btn .sci a{
+    display:  inline-flex;
+    padding: 8px;
+    border: 2px solid #7cf03d;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #7cf03d;
+    margin: 0 8px;
+}
+.homeinfo .btn .sci a:hover{
+    background-color: #7cf03d;
+    color:black;
+    box-shadow: none;
+}
+
+.homeimg img{
+    margin-right: 2px;
+    display: block;
+    object-fit: cover;
+    height: 36vw;
+    width: 34vw;
+    border-radius: 90%;
+    box-shadow: 0 0 25px #7cf03d;
+    transition: 0.5s ease-in-out;
+}
+.homeimg img:hover{
+    box-shadow: 0 0 25px,
+    0 0 50px,
+    0 0 70px;
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10rem 9% 2rem;
+    background:#1f242d ;
+    visibility: hidden;
+    opacity: 0;
+    overflow: auto;
+}
+section.active {
+    visibility: visible;
+    opacity: 1;
+    overflow: auto;
+    color:#fff;
+}
+.heading{
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.heading span{
+    color: #7cf03d;
+}
+.servicecontainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 2rem;
+}
+.servicecontainer .servicebox{
+    padding:3rem 2.5rem ;
+    background: #323946;
+border: .2rem solid #323946;
+border-radius: 1rem;
+transition: .5s;
+}
+.servicecontainer .servicebox:hover{
+    border-color: #7cf03d;
+    transform: scale(1.02);
+}
+.servicebox .icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.servicebox:hover .icon :not(a i){
+    color: #7cf03d;
+}
+.servicebox .icon i{
+    font-size: 2.4rem;
+
+}
+ .servicebox .icon a {
+    display: inline-flex;
+    background: #fff;
+    border-radius: 50%;
+    padding: 1rem;
+    transition: .5s;
+
+}
+.servicebox:hover .icon a{
+    background: #7cf03d;
+}
+.servicebox .icon a i{
+    font-size: 2.4rem;
+    color: #1f242d;
+    transform:rotate(225deg) ;
+
+}
+.servicebox .icon a:hover i{
+    transform: rotate(180deg);
+}
+.servicebox h3{
+    font-size:2.4rem ;
+    margin: .5rem 0 2rem;
+    transition: .5s;
+}
+.servicebox:hover h3{
+    color: #7cf03d;
+}
+.servicebox p{
+    font-size: 1.2rem;
+}
+.resumecontainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap:5rem ;
+}
+.resumebox h2{
+    font-size:33px;
+}
+.resumebox p{
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+}
+.resumebox .desc{
+    margin: 2rem 0 2.5rem;
+}
+.resumebox .resumebtn{
+    width: 100%;
+    height: 5.3rem;
+    background-color: #323946;
+    border: .2rem solid #323946;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    border-radius: .8rem;
+    margin-top: 2rem;
+    cursor: pointer;
+
+}
+.resumebox .resumebtn.active{
+    border-color: #7cf03d;
+    color: #7cf03d;
+}
+.resumebox .heading{
+font-size: 3.5rem;
+text-align: left;
+}
+.detail{
+    display: none;
+}
+.detail.active{
+    display: block;
+}
+.detail .heading{
+    font-size: 3.5rem;
+    text-align: left;
+}
+.resumelist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+    gap: 2rem;
+    height: 40rem;
+    overflow: auto;
+}
+.resumelist .resumeitem{
+    background: #323946;
+    border-radius: .8rem;
+    padding: 3rem 2.5rem;
+    height: calc(45rem- 2rem/2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.resumeitem .year{
+    color: #7cf03d;
+}
+.detail.skill .resumelist {
+    grid-template-columns: repeat(auto-fit ,minmax(15rem,1fr));
+    overflow: visible;
+    height: auto;
+}
+.detail.skill .resumeitem{
+    position: relative;
+    align-items: center;
+    height: auto;
+}
+.detail.skill .resumeitem i{
+    font-size: 8.5rem;
+    transition: .5s;
+}
+.detail.skill .resumeitem:hover i{
+    color: #7cf03d;
+}
+.detail.skill .resumeitem span{
+    position: absolute;
+    top: -20%;
+    background: white;
+    color: #1f242d;
+    font-size: 1.4rem;
+    padding: .5rem 1rem;
+    border-radius: .6rem;
+    opacity: 0;
+    transform: scale(.9);
+    transition:.2s ;
+
+}
+.detail.skill .resumeitem:hover span{
+    top: -25%;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.detail.interest .resumelist {
+    grid-template-columns: repeat(auto-fit ,minmax(15rem,1fr));
+    overflow: visible;
+    height: auto;
+}
+.detail.interest .resumeitem{
+    position: relative;
+    align-items: center;
+    height: auto;
+}
+.detail.interest .resumeitem i{
+    font-size: 8.5rem;
+    transition: .5s;
+}
+.detail.interest .resumeitem:hover i{
+    color: #7cf03d;
+}
+.detail.interest .resumeitem span{
+    position: absolute;
+    top: -20%;
+    background: white;
+    color: #1f242d;
+    font-size: 1.4rem;
+    padding: .5rem 1rem;
+    border-radius: .6rem;
+    opacity: 0;
+    transform: scale(.9);
+    transition:.2s ;
+
+}
+.detail.interest .resumeitem:hover span{
+    top: -25%;
+    opacity: 1;
+    transform: scale(1);
+}
+.detail.me {
+    color:white;
+}
+.detail.me span{
+    color: #7cf03d;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+}
+.container .box:first-child{
+    align-self: center;
+}
+.box h2{
+    font-size: 4.2rem;
+}
+.box p{
+    font-size: 1.5rem;
+}
+.box .contactdetail{
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+.contactdetail i{
+    display: inline-flex;
+    background: #323946;
+  color: #7cf03d;
+  font-size: 3rem;
+  padding: 1.2rem;
+  border-radius: .6rem;
+  margin-right: 1.5rem;  
+}
+
+.contactdetail .details p:first-child{
+    color: #7cf03d;
+}
+.box form{
+    background: #323946;
+    padding: 2.5rem 3.5rem 3.5rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+.box .heading{
+    font-size: 3.5rem;
+}
+.box .feildbox{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+.box .feildbox input,
+.box .feildbox textarea{
+    padding: 1.5rem;
+    background: #1f242d;
+    border: 0.15rem solid #1f242d;
+border-radius: .6rem;
+font-size: 1.5rem;
+color: #fff;
+}
+.box .feildbox textarea{
+    grid-column: 1/-1; /*giving ful width*/
+    height: 20rem;
+    resize: none;
+}
+.box .btns{
+    margin-top: 2rem;
+   border: 3px;
+   cursor: pointer;
+ }
+ /* for responsive in different screen */
+@media screen and (max-width:1200px) {
+    html{
+        font-size: 55%;
+    }
+}
+@media screen and (max-width:992px) {
+    header{
+        padding:2rem 4%;
+    }
+    section{
+       padding:  10rem 4% 2rem;
+    }
+}
+@media screen and (max-width:810px){
+    .box .feildbox{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:768px){
+    #menuicon{
+        display: block;
+    }
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        background: #1f242d;
+        border-top:  .1rem solid  rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2)  ;
+        text-align: center;
+        display:none ;
+    }
+    nav a{
+        display: block;
+        margin: 4rem 0;
+    }
+    nav.active{
+        display: block;
+    }
+    .home{
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .homeimg .imgbox{
+        width: 35rem;
+        height: 35rem;
+    }
+    .resumecontainer,.container{
+        grid-template-columns: 1fr;
+    }
+    .resumecontainer{
+        gap: 3rem;
+    }
+    .box .feildbox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media  screen and (max-width:600px) {
+    .homeimg .imgbox{
+        width: 30rem;
+        height: 30rem;
+    }
+    .box .feildbox{
+        grid-template-columns: 1fr;
+    }
+    
+}
+@media  screen and (max-width:450px){
+    html{
+        font-size:55%;
+    }
+    .homeimg{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media  screen and (max-width:400px){
+   .homeinfo,.resumebox h2,.resumebox .heading,.resumebox .desc
+    .detail.me .resumeitem{
+        text-align: center;
+        font-size: 15px;
+    }
+    .homeinfo .btn {
+        flex-direction: column-reverse;
+    }
+    .homeinfo .btn .btns{
+        margin-left: 0;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    .box form{
+        padding:2.5rem 3rem 1.5rem ;
+    }
+    .box h2{
+        font-size: 3.5rem;
+    }
+     
+}
+@media screen and (max-width: 450px) {
+  .homeimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: vertically center within full screen */
+  }
+
+  .homeimg img {
+    width: 65vw;         /* Increase width on small screens */
+    height: 65vw;        /* Keep height proportional */
+    margin: 0 auto;      /* Center horizontally */
+  }
+}
